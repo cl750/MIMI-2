@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #F5F5F5;
+    --base: #00272B;
+    --pop1: #E0FF4F;
+    --mid: #FF6663;
+    --pop2: #FF2ECC;
+    --complement: #A51080;
+}
+
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+  }
+
+@font-face {
+    font-family: Limelight;
+    src: url("./Limelight/Limelight-Regular.ttf");
+}
+
+body {
+    font-family: Limelight;
+    background-color: var(--background);
+    text-align: center;
+}
+
+h1 {
+    background: -webkit-linear-gradient(var(--pop1), var(--pop2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
