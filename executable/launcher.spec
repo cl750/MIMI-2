@@ -30,12 +30,12 @@ exe = EXE(
     a.datas,
     [],
     name='launcher',
-    debug=False,
+    debug=True,
     bootloader_ignore_signals=False,
     strip=False,
     upx=False,  # Disable UPX compression
     runtime_tmpdir='.',  # Remove temporary directory
-    console=False,  # Temporarily enable console for debugging
+    console=True,  # Temporarily enable console for debugging
     disable_windowed_traceback=False,
     argv_emulation=False,
 )
