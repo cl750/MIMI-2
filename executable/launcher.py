@@ -5,6 +5,8 @@ import time
 import webbrowser
 import importlib.util
 
+server_process = None
+
 def check_flask():
     try:
         import flask
