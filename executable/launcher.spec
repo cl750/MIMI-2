@@ -12,6 +12,7 @@ a = Analysis(
         'werkzeug',
         'jinja2',
         'click',
+        'psutil',
     ],
     hookspath=[],
     hooksconfig={},
@@ -33,7 +34,7 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=False,  # Disable UPX compression
-    runtime_tmpdir=None,  # Remove temporary directory
+    runtime_tmpdir='.',  # Remove temporary directory
     console=False,  # Temporarily enable console for debugging
     disable_windowed_traceback=False,
     argv_emulation=False,
