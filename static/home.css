@@ -5,12 +5,11 @@
 }
 
 :root {
-    --background: #F5F5F5;
-    --base: #00272B;
-    --pop1: #E0FF4F;
-    --mid: #FF6663;
-    --pop2: #FF2ECC;
-    --complement: #A51080;
+    --background: #450920;
+    --base: #A53860;
+    --pop1: #DA627D;
+    --mid: #FFA5AB;
+    --pop2: #F9DBBD;
 }
 
 html {
