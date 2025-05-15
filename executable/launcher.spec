@@ -6,7 +6,7 @@ a = Analysis(
     ['launcher.py'],
     pathex=[],
     binaries=[],
-    datas=[('../backend', 'backend')],
+    datas=[('../backend', 'backend'), ('../static', 'static'), ('../templates', 'templates')],
     hiddenimports=[
         'flask',
         'werkzeug',
