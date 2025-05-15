@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="home.css") }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
         <title>Home</title>
     </head>
     <body>
-        <h1> DATE-ABASE </h1>
+        <div class="splash-container">
+            <img src="{{ url_for('static', filename='DATEABASE.png') }}" alt="Logo" class="logo">
+            <h1> DATE-ABASE </h1>
+        </div>
     </body>
 </html>

@@ -28,7 +28,19 @@ body {
     text-align: center;
 }
 
+.splash-container {
+    text-align: center;
+    padding: 2rem;
+    animation: 1.5s ease-in;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+}
+
 h1 {
+    font-size: 4rem;
     background: -webkit-linear-gradient(var(--pop1), var(--pop2));
     background-clip: text;
     -webkit-background-clip: text;

@@ -27,7 +27,7 @@ def on_closing():
 if __name__ == "__main__":
     # app.run(host="127.0.0.1", port=5000, debug=False)
     kill(5000)
-    window = webview.create_window("DATEABASE", app)
+    window = webview.create_window("DATEABASE", app, fullscreen=True)
     window.events.closing += on_closing
     webview.start()
     
