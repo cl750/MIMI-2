@@ -8,8 +8,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const titleScreen = document.getElementById("title-screen");
 
     setTimeout(() => {
-        titleScreen.classList.add("fade-out");
+        titleScreen.classList.add("fade-in");
         setTimeout(() => {
-            titleScreen.style.display = "none";
-        }, titleScreenConfig.fadeOutDuration);
-    }, titleScreenConfig.displayDuration);
+                titleScreen.classList.add("fade-out");
+                setTimeout(() => {
+                    titleScreen.style.display = "none";
+                }, titleScreenConfig.fadeOutDuration);
+            }, titleScreenConfig.displayDuration);
+    }, titleScreenConfig.fadeInDuration);
+    
+});
