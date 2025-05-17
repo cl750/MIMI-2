@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import os
 import psutil
 import webview
-
+import time
 app = Flask(__name__, template_folder=os.path.join(".", "templates"), static_folder=os.path.join(".", "static"))
 
 def kill(port):
@@ -18,16 +18,19 @@ def kill(port):
     return False
 
 @app.route("/")
+def title():
+    return render_template("title.html")
+
+@app.route("/home")
 def home():
     return render_template("home.html")
 
-def on_closing():
+def on_close():
     kill(5000)
 
 if __name__ == "__main__":
     # app.run(host="127.0.0.1", port=5000, debug=False)
     kill(5000)
-    window = webview.create_window("DATEABASE", app, fullscreen=True)
-    window.events.closing += on_closing
-    webview.start()
-    
+    window = webview.create_window("DATEABASE", app, fullscreen=True, background_color="#000000")
+    window.events.closing += on_close
+    webview.start(debug=True)
