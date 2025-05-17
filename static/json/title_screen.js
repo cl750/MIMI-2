@@ -16,5 +16,4 @@ document.addEventListener("DOMContentLoaded", function() {
                 }, titleScreenConfig.fadeOutDuration);
             }, titleScreenConfig.displayDuration);
     }, titleScreenConfig.fadeInDuration);
-    
 });
