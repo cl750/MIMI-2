@@ -33,4 +33,4 @@ if __name__ == "__main__":
     kill(5000)
     window = webview.create_window("DATEABASE", app, fullscreen=True, background_color="#000000")
     window.events.closing += on_close
-    webview.start(debug=True)
+    webview.start(debug=False)

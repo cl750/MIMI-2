@@ -5,9 +5,24 @@
         <title>Title</title>
     </head>
     <body>
-        <div class="title-container" id="title-screen">
-            <img src="{{ url_for('static', filename='DATEABASE.png') }}" alt="Logo" class="logo">
+        <div class="title-text" id="title-text1">
+            <h1>HAPPY BIRTHDAY MIMI</h1>
         </div>
-        <script src="{{ url_for('static', filename='json/title_screen.js') }}"></script>
+
+        <div class="title-background" id="title-background">
+            <img src="../static/background.png" alt="background">
+        </div>
+
+
+        <div class="title-logogroup" id="title-logogroup">
+            <div class="title-logo" id="title-logo">
+                <img src="../static/logo.png" alt="logo">
+            </div>
+            <div class="title-logotext" id="title-logotext">
+                <h1> BY LALA STUDIOS </h1>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='json/title.js') }}"></script>
     </body>
 </html>

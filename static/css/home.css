@@ -1,0 +1,6 @@
+@import url("./global.css");
+
+* {
+    color: var(--background);
+    font-family: Amatic SC;
+}

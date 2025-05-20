@@ -1,28 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-    background-color: black !important;
-}
-
-:root {
-    --background: #450920;
-    --base: #A53860;
-    --pop1: #DA627D;
-    --mid: #FFA5AB;
-    --pop2: #F9DBBD;
-}
+@import url("./global.css");
 
 html {
     font-size: 20px;
     scroll-behavior: smooth;
-}
-
-@font-face {
-    font-family: Limelight;
-    src: url("../fonts/Limelight/Limelight-Regular.ttf");
 }
 
 h1 {
@@ -34,40 +14,69 @@ h1 {
 }
 
 body {
-    font-family: Limelight;
+    font-family: Amatic SC;
     text-align: center;
 }
 
-/* TITLE SCREEN */
-.title-container {
+.title-background {
     opacity: 0;
-    text-align: center;
-    padding: 2rem;
-    animation: 1.5s ease-in;
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-text {
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;    
+}
+
+.title-logogroup {
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: black !important;
 }
 
-.logo {
-    max-width: 90vh;
-    max-height: 60vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+.title-logo {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-logotext h1 {
+    font-size: 4rem;
+    background: -webkit-linear-gradient(var(--base), var(--background));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
 }
 
 /* ANIMATIONS */
 .fade-in {
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards;
+    /* opacity: 0; */
+    animation: fadeIn 1.25s ease-in forwards;
 }
 
 .fade-out {
-    opacity: 0;
-    animation: fadeOut 1.5s ease-out forwards;
+    /* opacity: 0; */
+    animation: fadeOut 1.25s ease-out forwards;
 }
 
 @keyframes fadeIn {

@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: transparent !important;
+    color: antiquewhite;
+}
+
+:root {
+    --background: #450920;
+    --base: #A53860;
+    --pop1: #DA627D;
+    --mid: #FFA5AB;
+    --pop2: #F9DBBD;
+}
+
+@font-face {
+    font-family: Limelight;
+    src: url("../fonts/Limelight/Limelight-Regular.ttf");
+}
+
+@font-face {
+    font-family: Amatic SC;
+    src: url("../fonts/Amatic_SC/AmaticSC-Regular.ttf");
+}
