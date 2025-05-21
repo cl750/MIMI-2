@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
         await animate(logogroup, false);
         await new Promise(resolve => setTimeout(resolve, 1000));
         await fadeAll(elements);
-        // window.location.href = "/home";
+        window.location.href = "/home";
     }
 
     titleAnimations();
