@@ -14,7 +14,7 @@ body {
     background-color: white;
 }
 
-.title-background {
+#title-background {
     opacity: 0;
     position: fixed;
     top: 0;
@@ -26,7 +26,7 @@ body {
     object-fit: cover;
 }
 
-.title-background img {
+#title-background img {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -50,7 +50,7 @@ body {
     text-align: center;
 }
 
-.title-logogroup {
+#title-logogroup {
     opacity: 0;
     position: fixed;
     top: 50%;
@@ -62,7 +62,7 @@ body {
     align-items: center;
 }
 
-.title-logo {
+#title-logo {
     width: 400px;
     height: 400px;
     display: flex;
@@ -70,7 +70,7 @@ body {
     align-items: center;
 }
 
-.title-logotext h1 {
+#title-logotext h1 {
     font-size: 4rem;
     background: -webkit-linear-gradient(var(--base), var(--background));
     background-clip: text;
@@ -79,8 +79,21 @@ body {
     text-align: center;
 }
 
-.loading-container {
+#loading-container {
     opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#loading-text {
+    color: var(--mid);
 }
 
 /* ANIMATIONS */

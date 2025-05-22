@@ -19,19 +19,38 @@ document.addEventListener("DOMContentLoaded", function() {
     async function fadeAll(elements) {
         return new Promise((resolve) => {
             elements.forEach((item) => { item.classList.add("fade-out"); });
-            resolve();
+            setTimeout(resolve, 2000);
+        });
+    }
+
+    async function loading() {
+        return new Promise((resolve) => {
+            const states = ["<h1>Loading.<h1>", "<h1>Loading..<h1>", "<h1>Loading...<h1>"];
+            var stage = 0;
+            loading_text.innerHTML = states[stage];
+            load = setInterval(() => {
+                stage = (stage + 1) % states.length;
+                loading_text.innerHTML = states[stage];
+                console.log(stage);
+            }, 250);
+            setTimeout(() => {
+                clearInterval(load);
+                resolve();
+            }, 3000);
         });
     }
 
     const durations = {
         fadeInDuration: 1250,
-        displayDuration: 1250,
+        displayDuration: 2000,
         fadeOutDuration: 1250,
     };
 
     const text = document.getElementById("title-text");
     const background = document.getElementById("title-background");
     const logogroup = document.getElementById("title-logogroup");
+    const loading_container = document.getElementById("loading-container");
+    const loading_text = document.getElementById("loading-text");
     const elements = [text, background, logogroup];
 
 
@@ -41,7 +60,10 @@ document.addEventListener("DOMContentLoaded", function() {
         await animate(logogroup, false);
         await new Promise(resolve => setTimeout(resolve, 1000));
         await fadeAll(elements);
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        loading_container.style.opacity = 1;
+        await loading(5000);
+        await new Promise(resolve => setTimeout(resolve, 500));
+        await fadeAll([loading_container]);
         window.location.href = "/home";
     }
 
