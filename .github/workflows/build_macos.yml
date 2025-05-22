@@ -1,4 +1,4 @@
-name: Build PROJECT_MIMI macOS App
+name: Build PROJECT_MIMI macOS App + DMG
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v3
 
     - name: Set up Python 3.13
@@ -22,14 +22,23 @@ jobs:
         pip install pyinstaller
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Build macOS .app with PyInstaller
+    - name: Build .app with PyInstaller
       run: |
-        pyinstaller main.py --clean --noconfirm --onefile --windowed --name "PROJECT_MIMI" --icon "logo.icns"
-        mkdir -p release
-        cp -R "dist/PROJECT_MIMI.app" release/
+        pyinstaller main.py --noconfirm --windowed --name "PROJECT_MIMI" --icon "icon.icns"
+        mkdir release
+        cp -R dist/PROJECT_MIMI.app release/
 
-    - name: Upload built .app as artifact
+    - name: Install create-dmg
+      run: |
+        brew install create-dmg
+
+    - name: Create DMG
+      run: |
+        create-dmg \
+          --volname "PROJECT_MIMI Installer" --window-pos 200 120 --window-size 500 300 --icon-size 100 --icon "PROJECT_MIMI.app" 125 140 --app-drop-link 375 140 "PROJECT_MIMI.dmg" release/
+
+    - name: Upload DMG artifact
       uses: actions/upload-artifact@v4
       with:
-        name: PROJECT_MIMI.app
-        path: release/PROJECT_MIMI.app
+        name: PROJECT_MIMI-macOS-dmg
+        path: PROJECT_MIMI.dmg
