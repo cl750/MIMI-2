@@ -7,6 +7,10 @@
     color: antiquewhite;
 }
 
+body {
+    background-color: black;
+}
+
 :root {
     --background: #450920;
     --base: #A53860;
