@@ -29,14 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
         fadeOutDuration: 1250,
     };
 
-    const text1 = document.getElementById("title-text1");
+    const text = document.getElementById("title-text");
     const background = document.getElementById("title-background");
     const logogroup = document.getElementById("title-logogroup");
-    const elements = [text1, background, logogroup];
+    const elements = [text, background, logogroup];
 
 
     async function titleAnimations() {
-        await animate(text1, true);
+        await animate(text, true);
         await animate(background, false);
         await animate(logogroup, false);
         await new Promise(resolve => setTimeout(resolve, 1000));
