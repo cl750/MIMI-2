@@ -8,7 +8,7 @@ def setup():
         import psutil
         import webview
     except ImportError:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "flask", "psutil", "webview"])
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "flask", "psutil", "pywebview"])
 
 setup()
 
