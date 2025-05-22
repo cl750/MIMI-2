@@ -24,7 +24,7 @@ jobs:
 
     - name: Build .app with PyInstaller
       run: |
-        pyinstaller main.py --noconfirm --windowed --name "PROJECT_MIMI" --icon "logo.icns"
+        pyinstaller PROJECT_MIMI.spec --noconfirm --windowed --name "PROJECT_MIMI" --icon "logo.icns"
         mkdir release
         cp -R dist/PROJECT_MIMI.app release/
 

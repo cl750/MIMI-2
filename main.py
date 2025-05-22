@@ -4,14 +4,6 @@ from flask import Flask, render_template
 import psutil
 import webview
 app = Flask(__name__, template_folder=os.path.join(".", "templates"), static_folder=os.path.join(".", "static"))
-
-def setup():
-    try:
-        import flask
-        import webview
-        import psutil
-    except ImportError:
-        subprocess.run(["python", "-m", "pip", "install", "flask", "pywebview", "psutil"])
         
 def kill(port):
     for proc in psutil.process_iter():
@@ -38,7 +30,6 @@ def on_close():
 
 if __name__ == "__main__":
     # app.run(host="127.0.0.1", port=5000, debug=False)
-    setup()
     kill(5000)
     window = webview.create_window("DATEABASE", app, fullscreen=True, background_color="#000000")
     window.events.closing += on_close
