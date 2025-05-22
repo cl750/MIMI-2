@@ -4,6 +4,7 @@
     box-sizing: border-box;
     overflow: hidden;
     color: antiquewhite;
+    font-weight: 300;
 }
 
 :root {
