@@ -1,8 +1,6 @@
 import os
 import sys
 import subprocess
-
-app = Flask(__name__, template_folder=os.path.join(".", "templates"), static_folder=os.path.join(".", "static"))
         
 def setup():
     try:
@@ -17,6 +15,8 @@ setup()
 from flask import Flask, render_template
 import psutil
 import webview
+
+app = Flask(__name__, template_folder=os.path.join(".", "templates"), static_folder=os.path.join(".", "static"))
 
 def kill(port):
     for proc in psutil.process_iter():
