@@ -100,9 +100,12 @@ body {
     color: var(--mid);
     display: inline-block;
     padding: 0.5rem 1rem;
-    cursor: pointer;
     z-index: 15;
     transition: all 0.4s ease;
+}
+
+.loaded-text {
+    cursor: pointer;
 }
 
 .loaded-text:hover {
