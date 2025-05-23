@@ -2,5 +2,10 @@
 
 * {
     color: var(--background);
+    /* background-image: */
     font-family: Amatic SC;
+}
+
+.home-title {
+    font-size: 6rem;
 }

@@ -1,7 +1,8 @@
 @import url("./global.css");
+@import url("./node_modules/animate.css/animate.css");
 
 h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     background: -webkit-linear-gradient(var(--pop1), var(--pop2));
     background-clip: text;
     -webkit-background-clip: text;
@@ -60,6 +61,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    pointer-events: none;
 }
 
 #title-logo {
@@ -79,7 +81,7 @@ body {
     text-align: center;
 }
 
-#loading-container {
+.loading-container {
     opacity: 0;
     position: fixed;
     top: 0;
@@ -87,34 +89,40 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: all 0.4s ease;
 }
 
-#loading-text {
+.loading-text {
     color: var(--mid);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 15;
+    transition: all 0.4s ease;
 }
 
-/* ANIMATIONS */
-.fade-in {
-    /* opacity: 0; */
-    animation: fadeIn 1.25s ease-in forwards;
+.loaded-text:hover {
+    box-shadow: -2px 0 2px 0 var(--pop2);
 }
 
-.fade-out {
-    /* opacity: 0; */
-    animation: fadeOut 1.25s ease-out forwards;
+.loaded-text:hover h1 {
+    font-size: 6rem;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+#instruction {
+    opacity: 0;
+    pointer-events: none;
 }
 
-@keyframes fadeOut {
-    from {opacity: 1;}
-    to {opacity: 0;}
+#instruction h3 {
+    font-family: atypewriterforme;
+    color: black;
 }
+
+
 
 

@@ -35,8 +35,22 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 250);
             setTimeout(() => {
                 clearInterval(load);
+                loading_text.innerHTML = "<h1>Loaded!<h1>";
+                loading_text.classList.add("animate__animated", "animate__tada", "loaded-text");
                 resolve();
             }, 3000);
+        });
+    }
+
+    async function waitForClick() {
+        return new Promise((resolve) => {
+            document.addEventListener("click", function clicked() {
+                document.removeEventListener("click", clicked);
+                loading_text.classList.remove("loaded-text");
+                loading_text.classList.add("zoom");
+                resolve();
+            }, {once: true});
+            setTimeout(() => {instruction.classList.add("fade-in")}, 3000);
         });
     }
 
@@ -51,7 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const logogroup = document.getElementById("title-logogroup");
     const loading_container = document.getElementById("loading-container");
     const loading_text = document.getElementById("loading-text");
-    const elements = [text, background, logogroup];
+    const instruction = document.getElementById("instruction");
+    const elements = [text, logogroup];
 
 
     async function titleAnimations() {
@@ -60,10 +75,12 @@ document.addEventListener("DOMContentLoaded", function() {
         await animate(logogroup, false);
         await new Promise(resolve => setTimeout(resolve, 1000));
         await fadeAll(elements);
+        await new Promise(resolve => setTimeout(resolve, 250));
+        await fadeAll([background]);
         loading_container.style.opacity = 1;
-        await loading(5000);
-        await new Promise(resolve => setTimeout(resolve, 500));
-        await fadeAll([loading_container]);
+        await loading(4000);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await waitForClick();
         window.location.href = "/home";
     }
 
