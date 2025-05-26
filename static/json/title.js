@@ -19,19 +19,18 @@ document.addEventListener("DOMContentLoaded", function() {
     async function fadeAll(elements) {
         return new Promise((resolve) => {
             elements.forEach((item) => { item.classList.add("fade-out"); });
-            setTimeout(resolve, 2000);
+            setTimeout(resolve, 1500);
         });
     }
 
     async function loading() {
         return new Promise((resolve) => {
-            const states = ["<h1>Loading.<h1>", "<h1>Loading..<h1>", "<h1>Loading...<h1>"];
+            const states = ["<h1>Dateabase Loading.<h1>", "<h1>Dateabase Loading..<h1>", "<h1>Dateabase Loading...<h1>"];
             var stage = 0;
             loading_text.innerHTML = states[stage];
             load = setInterval(() => {
                 stage = (stage + 1) % states.length;
                 loading_text.innerHTML = states[stage];
-                console.log(stage);
             }, 250);
             setTimeout(() => {
                 clearInterval(load);
@@ -44,11 +43,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function waitForClick() {
         return new Promise((resolve) => {
-            document.addEventListener("click", function clicked() {
+            loading_text.addEventListener("click", function clicked() {
                 document.removeEventListener("click", clicked);
                 loading_text.classList.remove("loaded-text");
-                loading_text.classList.add("zoom");
-                resolve();
+                loading_text.classList.add("animate__zoomOut");
+                instruction.classList.add("animate__zoomOut")
+                loading_container.style.backgroundColor = "black";
+                setTimeout(resolve, 2000);
             }, {once: true});
             setTimeout(() => {instruction.classList.add("fade-in")}, 3000);
         });
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const loading_container = document.getElementById("loading-container");
     const loading_text = document.getElementById("loading-text");
     const instruction = document.getElementById("instruction");
-    const elements = [text, logogroup];
+    const screen1 = [text, logogroup];
 
 
     async function titleAnimations() {
@@ -74,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         await animate(background, false);
         await animate(logogroup, false);
         await new Promise(resolve => setTimeout(resolve, 1000));
-        await fadeAll(elements);
+        await fadeAll(screen1);
         await new Promise(resolve => setTimeout(resolve, 250));
         await fadeAll([background]);
         loading_container.style.opacity = 1;

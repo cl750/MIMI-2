@@ -28,6 +28,8 @@ jobs:
 
     - name: Install frontend dependencies
       run: npm install
+           npm install --save three
+           npm install --save vanta
 
     - name: Build .app with PyInstaller
       run: |

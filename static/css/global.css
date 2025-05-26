@@ -1,3 +1,5 @@
+@import url("./animate.css");
+
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +15,10 @@
     --pop1: #DA627D;
     --mid: #FFA5AB;
     --pop2: #F9DBBD;
+}
+
+.hidden {
+    display: none;
 }
 
 /* FONTS */
