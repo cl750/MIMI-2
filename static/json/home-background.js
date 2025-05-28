@@ -1,16 +1,14 @@
 document.addEventListener(("DOMContentLoaded"), () => {
-    VANTA.GLOBE ({
+    VANTA.HALO({
         el: "#home-background",
         mouseControls: true,
         touchControls: true,
-        gyroControls: true,
+        gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        size: 1.20,
-        color: 0xA53860,
-        color2: 0x450920,
-        backgroundColor: 0xFFA5AB
+        baseColor: 0xFFA5AB,
+        backgroundColor: 0x450920,
+        amplitudeFactor: 1.20,
+        size: 1.60
     })
 });

@@ -1,12 +1,11 @@
 @import url("./global.css");
 
 * {
-    color: var(--background);
-    font-family: Amatic SC;
+    font-family: Roboto Mono;
 }
 
 #home-background {
-    opacity: 1;
+    opacity: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -15,9 +14,42 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: fadeIn 1.5s ease-in forwards;
+    cursor: none;
+    transition: 1.5s ease-in forwards;
 }
 
-.home-title {
-    font-size: 6rem;
+#text-container {
+    position: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    cursor: none;
+}
+
+#home-title {
+    display: block;
+    color: var(--pop2);
+    font-size: 3rem;
+    cursor: none;
+}
+
+#continue-text {
+    color: var(--pop2);
+    font-size: 2rem;
+    cursor: none;
+}
+
+.dateType {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    cursor: none;
 }
