@@ -8,18 +8,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function menu() {
         return new Promise(resolve => {
-            background.style.opacity = 0.7;
-            title.innerHTML = "<h1 id='home-title'>WHAT DO YOU WANT TO DO?</h1>";
+            background.classList.add("fade-in");
             continue_text.classList.remove("animate__flash", "animate__slower", "animate__infinite");
             continue_text.classList.add("animate__fadeOut");
-            eating.classList.add("fade-in");
-            sightseeing.classList.add("fade-in");
-            playing.classList.add("fade-in");
-            resolve();
+            title.style.borderColor = "transparent";
+            title.classList.add("fade-out");
+            title.innerHTML = "<h1 id='home-title'>WHAT KIND OF DATE ARE YOU FEELING?</h1>";
+            title.classList.add("fade-in");
+            document.body.style.cursor = "pointer";
+            setTimeout(() => {
+                eating.classList.add("fade-in");
+                sightseeing.classList.add("fade-in");
+                playing.classList.add("fade-in");
+                resolve();
+            }, 1000);            
         });
     }
 
     async function progress() {
+        await new Promise(resolve => setTimeout(resolve, 2000));
         await new Promise(resolve => {
             document.addEventListener("click", resolve);
         });
