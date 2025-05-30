@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const title = document.getElementById("home-title");
     const continue_text = document.getElementById("continue-text"); 
     const menu_container = document.getElementById("menu-container");
+    const categories = document.getElementsByClassName("category");
     const combos = [["Eating", "Playing", "Sightseeing"], ["Morning", "Afternoon", "Evening"], ["Lazy", "Bouncy", "Studious"]];
     var choices = [];
 
@@ -31,16 +32,21 @@ document.addEventListener("DOMContentLoaded", function() {
     async function decide_wrapper() {
         return new Promise(resolve => {
             var currentCat = 0;
+            categories.item(currentCat).style.opacity = 1;
+            categories.item(currentCat).style.pointerEvents = "auto";
             window.decide = function(categoryNum, choiceNum) {
                 if (categoryNum == currentCat) {
+                    categories.item(currentCat).style.opacity = 0.6;
+                    categories.item(currentCat).style.pointerEvents = "none";
                     choices[categoryNum] = combos[categoryNum][choiceNum];
                     currentCat++;
                     if (currentCat > 2) {
                         resolve();
                     }
+                    categories.item(currentCat).style.opacity = 1;
+                    categories.item(currentCat).style.pointerEvents = "auto";
                 }
-            }
-            
+            }            
         });
     }
 
