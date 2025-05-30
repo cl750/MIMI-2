@@ -62,6 +62,14 @@
     cursor: none;
 }
 
+.category-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+}
+
 .category {
     opacity: 0.6;
     height: 200px;
@@ -101,4 +109,21 @@
 
 .category h1:hover {
     transform: scale(1.1);
+}
+
+.up-arrow, .down-arrow {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+}
+
+.up-arrow {
+    top: -10%;
+}
+
+.down-arrow {
+    top: 110%;
 }

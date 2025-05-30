@@ -23,9 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
         return new Promise(resolve => {
             text_container.style.cursor = "default";
             menu_container.style.cursor = "default";
-            title.classList.add("hidden");
-            menu_container.classList.add("fade-in");
-            resolve();  
+            title.style.transition = "0.4s ease-in-out";
+            title.style.opacity = 0;
+            setTimeout(() => {
+                title.classList.add("hidden");
+                menu_container.classList.add("fade-in");
+                resolve();  
+            }, 500);            
         });
     }
 
@@ -43,8 +47,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (currentCat > 2) {
                         resolve();
                     }
-                    categories.item(currentCat).style.opacity = 1;
-                    categories.item(currentCat).style.pointerEvents = "auto";
+                    else {
+                        categories.item(currentCat).style.opacity = 1;
+                        categories.item(currentCat).style.pointerEvents = "auto";
+                    }
                 }
             }            
         });
@@ -54,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
         background1.classList.add("animate__animated", "animate__fadeIn", "animate__slower");
         await new Promise(resolve => setTimeout(resolve, 2250));
         continue_text.classList.remove("hidden");
+        await new Promise(resolve => setTimeout(resolve, 500));
         await new Promise(resolve => {
             document.addEventListener("click", resolve, {once : true});
         });
@@ -61,13 +68,15 @@ document.addEventListener("DOMContentLoaded", function() {
         await menu();
         await new Promise(resolve => setTimeout(resolve, 2250));
         continue_text.classList.remove("hidden");
+        await new Promise(resolve => setTimeout(resolve, 500));
         await new Promise(resolve => {
             document.addEventListener("click", resolve, {once : true});
         });
         continue_text.classList.add("hidden");
         await menu2();
         await decide_wrapper();
-        console.log(choices.toString());
+        document.querySelectorAll(".up-arrow, .down-arrow").forEach(element => { element.style.opacity = 0; });
+        await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
     progress();

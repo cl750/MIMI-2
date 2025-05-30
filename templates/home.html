@@ -15,37 +15,61 @@
         </div>
         
         <div class="menu-container" id="menu-container">
-            <div class="category" id="activity">
-                <div class="choice">
-                    <h1 onclick="decide(0, 0)"> EATING </h1>
+            <div class="category-wrapper" id="activity-wrap">
+                <div class="up-arrow">
+                    <img src="../static/images/up.png">
                 </div>
-                <div class="choice">
-                    <h1 onclick="decide(0, 1)"> PLAYING </h1>
+                <div class="category" id="activity">
+                    <div class="choice">
+                        <h1 onclick="decide(0, 0)"> EATING </h1>
+                    </div>
+                    <div class="choice">
+                        <h1 onclick="decide(0, 1)"> PLAYING </h1>
+                    </div>
+                    <div class="choice">
+                        <h1 onclick="decide(0, 2)"> SIGHTSEEING </h1>
+                    </div>
                 </div>
-                <div class="choice">
-                    <h1 onclick="decide(0, 2)"> SIGHTSEEING </h1>
-                </div>
-            </div>
-            <div class="category" id="time">
-                <div class="choice">
-                    <h1 onclick="decide(1, 0)"> MORNING&#128542 </h1>
-                </div>
-                <div class="choice">
-                    <h1 onclick="decide(1, 1)"> AFTERNOON&#129303 </h1>
-                </div>
-                <div class="choice">
-                    <h1 onclick="decide(1, 2)"> EVENING&#128572 </h1>
+                <div class="down-arrow">
+                    <img src="../static/images/down.png">
                 </div>
             </div>
-            <div class="category" id="mood">
-                <div class="choice">
-                    <h1 onclick="decide(2, 0)"> LAZY </h1>
+            <div class="category-wrapper" id="time-wrap">
+                <div class="up-arrow">
+                    <img src="../static/images/up.png">
                 </div>
-                <div class="choice">
-                    <h1 onclick="decide(2, 1)"> BOUNCY </h1>
+                <div class="category" id="time">
+                    <div class="choice">
+                        <h1 onclick="decide(1, 0)"> MORNING&#128542 </h1>
+                    </div>
+                    <div class="choice">
+                        <h1 onclick="decide(1, 1)"> AFTERNOON&#129303 </h1>
+                    </div>
+                    <div class="choice">
+                        <h1 onclick="decide(1, 2)"> EVENING&#128572 </h1>
+                    </div>
                 </div>
-                <div class="choice">
-                    <h1 onclick="decide(2, 2)"> STUDIOUS </h1>
+                <div class="down-arrow">
+                    <img src="../static/images/down.png">
+                </div>
+            </div>
+            <div class="category-wrapper" id="mood-wrap">
+                <div class="up-arrow">
+                    <img src="../static/images/up.png">
+                </div>
+                <div class="category" id="mood">
+                    <div class="choice">
+                        <h1 onclick="decide(2, 0)"> LAZY </h1>
+                    </div>
+                    <div class="choice">
+                        <h1 onclick="decide(2, 1)"> BOUNCY </h1>
+                    </div>
+                    <div class="choice">
+                        <h1 onclick="decide(2, 2)"> STUDIOUS </h1>
+                    </div>
+                </div>
+                <div class="down-arrow">
+                    <img src="../static/images/down.png">
                 </div>
             </div>
         </div>
@@ -63,5 +87,6 @@
         <script src="../static/json/vanta.net.min.js"></script>
         <script src="../static/json/home-background1.js"></script>
         <script src="../static/json/home-background2.js"></script>
+        <script src="../static/json/scroll.js"></script>
     </body>
 </html>
