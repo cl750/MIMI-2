@@ -11,6 +11,6 @@ document.addEventListener(("DOMContentLoaded"), () => {
         lowlightColor: 0xDA627D,
         baseColor: 0xFFFFFF,
         blurFactor: 0.85,
-        speed: 1.1
+        speed: 1.4
     })
 });
