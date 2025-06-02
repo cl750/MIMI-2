@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const background1 = document.getElementById("home-background1");
+    const background2 = document.getElementById("home-background2");
     const text_container = document.getElementById("text-container");
     const title = document.getElementById("home-title");
     const continue_text = document.getElementById("continue-text"); 
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function menu() {
         return new Promise(resolve => {
-            
+            background1.classList.add("animate__animated", "animate__fadeIn", "animate__slower");
         });
     }
 
@@ -67,7 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     async function progress() {
-        background1.classList.add("animate__animated", "animate__fadeIn", "animate__slower");
+        await menu();
+        background2.classList.add("animate__animated", "animate__fadeIn", "animate__slower");
+        title.style.display = "block";
         await new Promise(resolve => setTimeout(resolve, 2250));
         continue_text.classList.remove("hidden");
         await new Promise(resolve => setTimeout(resolve, 500));
