@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     const background1 = document.getElementById("home-background1");
-    const background2 = document.getElementById("home-background2");
     const text_container = document.getElementById("text-container");
     const title = document.getElementById("home-title");
     const continue_text = document.getElementById("continue-text"); 
@@ -11,15 +10,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function menu() {
         return new Promise(resolve => {
+            
+        });
+    }
+
+    async function menu2() {
+        continue_text.classList.add("hidden");
+        await new Promise(resolve => {
             title.style.borderColor = "transparent";
             setTimeout(() => {
                 title.innerHTML = "<h1 id='home-title'>WHAT KIND OF DATE ARE YOU FEELING?</h1>";
                 resolve();    
             }, 250);
         });
-    }
-
-    async function menu2() {
+        await new Promise(resolve => setTimeout(resolve, 2250));
+        continue_text.classList.remove("hidden");
+        await new Promise(resolve => setTimeout(resolve, 500));
+        await new Promise(resolve => {
+            document.addEventListener("click", resolve, {once : true});
+        });
+        continue_text.classList.add("hidden");
         return new Promise(resolve => {
             text_container.style.cursor = "default";
             menu_container.style.cursor = "default";
@@ -64,19 +74,14 @@ document.addEventListener("DOMContentLoaded", function() {
         await new Promise(resolve => {
             document.addEventListener("click", resolve, {once : true});
         });
-        continue_text.classList.add("hidden");
-        await menu();
-        await new Promise(resolve => setTimeout(resolve, 2250));
-        continue_text.classList.remove("hidden");
-        await new Promise(resolve => setTimeout(resolve, 500));
+        await menu2();
+        await decide_wrapper();
         await new Promise(resolve => {
             document.addEventListener("click", resolve, {once : true});
         });
-        continue_text.classList.add("hidden");
-        await menu2();
-        await decide_wrapper();
+        await new Promise(resolve => setTimeout(resolve, 500));
         document.querySelectorAll(".up-arrow, .down-arrow").forEach(element => { element.style.opacity = 0; });
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        document.querySelectorAll(".category-wrapper").forEach(element => { element.classList.add("fade-out"); });
     }
 
     progress();
