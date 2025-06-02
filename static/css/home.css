@@ -16,6 +16,7 @@
     object-fit: cover;
     cursor: none;
     transition: 1.5s ease-in forwards;
+    pointer-events: none;
 }
 
 #home-background1 img {
@@ -25,6 +26,97 @@
     width: 100%;
     height: 100%;
 }
+
+.guide {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    text-align: center;
+    font-family: Amatic SC;
+    color: var(--pop1);
+    font-size: 6rem;
+}
+
+.token-container {
+    position: fixed;
+    top: 3.5%;
+    left: 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.token-bar img {
+    width: 306px;
+    height: 204px;
+}
+
+.token-count {
+    position: fixed;
+    top: 28%;
+    left: 73%;
+    font-size: 4rem;
+    color: var(--background);
+    font-family: Amatic SC;
+    z-index: 200;
+    font-weight: 500;
+}
+
+.play {
+    position: fixed;
+    top: 30%;
+    left: 60%;
+    transform: (-50%, -50%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    overflow: visible;
+    transition: 0.2 ease-in-out;
+}
+
+.restart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    overflow: visible;
+    transition: 0.2 ease-in-out;
+}
+
+.play img {
+    width: 300px;
+    height: 300px;
+}
+
+.restart img {
+    width: 300px;
+    height: 300px;
+}
+
+.play :hover {
+    transform: scale(1.2);
+    rotate: rotate(25deg);
+}
+
+.restart :hover {
+    transform: scale(1.2);
+    rotate: rotate(25deg);
+}
+
+.restart h1 {
+    pointer-events :none;
+}
+
 
 #text-container {
     position: fixed;
@@ -42,7 +134,7 @@
 }
 
 #home-title {
-    display: none;
+    display: block;
     color: var(--background);
     font-size: 3rem;
     cursor: none;
@@ -68,6 +160,7 @@
     align-items: center;
     gap: 0.5vw;
     cursor: none;
+    pointer-events: none;
 }
 
 .category-wrapper {
@@ -149,4 +242,19 @@
 
 .down-arrow {
     top: 110%;
+}
+
+.win-screen {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: #98FCBC;
+}
+
+.win-screen h1 {
+    font-size: 7rem;
+    color: black;
 }

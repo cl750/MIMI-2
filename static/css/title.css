@@ -2,7 +2,7 @@
 @import url("./animate.css");
 
 h1 {
-    font-size: 5rem;
+    font-size: 6.5rem;
     background: -webkit-linear-gradient(var(--base), var(--background));
     background-clip: text;
     -webkit-background-clip: text;

@@ -8,12 +8,26 @@
         <div class="home-background1" id="home-background1">
             <img src="../static/images/lima.png">
         </div>
+        <h1 class="guide hidden" id="guide1"> HERE'S HOW THIS WORKS </h1>
+        <h1 class="guide hidden" id="guide2"> YOU WILL RECEIVE THREE GAME TOKENS EVERY DAY</h1>
+        <h1 class="guide hidden" id="guide3"> EACH TOKEN GIVES YOU ONE CHANCE TO CHOOSE FROM DATE OPTIONS </h1>
+        <h1 class="guide hidden" id="guide4"> IF YOU HIT THE DAILY JACKPOT, I WILL TAKE YOU ON THAT DATE ASAP </h1>
+        <h1 class="guide hidden" id="guide5"> there will be future updates, be prepared &#128536 </h1>
+        <div class="token-container hidden" id="token-container">
+            <div class="token-bar">
+                <img src="../static/images/count.png">
+            </div>
+            <h1 class="token-count" id="token-count"></h1>
+        </div>
         <div class="home-background2" id="home-background2"></div>
         <div class="text-container" id="text-container">
             <div class="typewriter">
                 <h1 id="home-title"> WELCOME TO THE DATEABASE </h1>
             </div>
             <h2 class="hidden animate__animated animate__flash animate__slower animate__infinite" id="continue-text"> click to continue </h2>
+        </div>
+        <div class="play hidden" id="play">
+            <img src="../static/images/play.png">
         </div>
         
         <div class="menu-container" id="menu-container">
@@ -75,6 +89,14 @@
                 </div>
             </div>
         </div>
+        <div class="restart hidden" id="restart">
+            <img src="../static/images/restart.png">
+            <h1> YOU LOST! Restart? </h1>
+        </div>
+        <div class="win-screen" id="win-screen">
+            <h1> YOU WON!!!! CALL ME RN &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829 &#9829</h1>
+            <div class="exit-button"> </div>
+        </div>
 
         <script>
             window.define = function(categoryNum, choiceNum) {
@@ -82,12 +104,14 @@
             }
         </script>
 
-
+        
+        <script src="../static/json/result.js"></script>
         <script src="../static/json/home.js"></script>
         <script src="../static/json/three.min.js"></script>
         <script src="../static/json/vanta.waves.min.js"></script>
         <script src="../static/json/vanta.net.min.js"></script>
         <script src="../static/json/home-background2.js"></script>
         <script src="../static/json/scroll.js"></script>
+        <script src="../static/json/tokens.js"></script>
     </body>
 </html>
