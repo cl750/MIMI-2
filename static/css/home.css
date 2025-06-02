@@ -84,6 +84,7 @@
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     mask-image: linear-gradient(to bottom, transparent 0%, var(--mid) 25px, var(--mid) calc(100% - 25px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, var(--mid) 25px, var(--mid) calc(100% - 25px), transparent 100%);
 }
 
 .category::-webkit-scrollbar {
