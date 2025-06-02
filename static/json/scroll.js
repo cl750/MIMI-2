@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.category-wrapper').forEach(wrapper => {
         const category = wrapper.querySelector('.category');
+        category.scrollTop = 0;
         const upArrow = wrapper.querySelector('.up-arrow');
         const downArrow = wrapper.querySelector('.down-arrow');
 
